@@ -21,5 +21,6 @@ spec:
               name: {{ .Release.Name }}-configmap
           image: phpmyadmin/phpmyadmin
           name: {{ .Release.Name }}-phpmyadmin
+          imagePullPolicy: Always
           resources: {}
       restartPolicy: Always
