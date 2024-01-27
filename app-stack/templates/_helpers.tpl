@@ -68,20 +68,3 @@ Hook to ensure certain resources are created before others.
   {{ include "configmap" . | nindent 6 }}
   
 {{- end -}}
-
-
-{{/*
-Define a function to read and template the contents of a file.
-*/}}
-{{- define "readAndTemplateFile" -}}
-{{- $filePath := . -}}
-{{- tpl (readFile $filePath) . -}}
-{{- end -}}
-
-{{/*
-Define a function to read the contents of a file.
-*/}}
-{{- define "readFile" -}}
-{{- $filePath := . -}}
-{{- printf "%s" (tpl (file $filePath) .) -}}
-{{- end -}}
